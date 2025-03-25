@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 				case 's':
 					str = va_arg(args, char *);
 					j = 0;
+					if (!str)
+						str = "(null)";
 					while (str[j])
 					{
 						_putchar(str[j]);
@@ -34,6 +36,8 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%');
 					contador++;
+					break;
+				default:
 					break;
 			}
 		}

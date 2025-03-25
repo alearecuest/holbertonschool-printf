@@ -1,6 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -14,6 +15,11 @@ int main(void)
     unsigned int ui;
     void *addr;
 
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+    _printf(NULL);
+    _printf("%");
+    _printf("%k\n");
+    _printf("%!\n");
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
