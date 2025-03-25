@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 int _printf(const char *format, ...)
 {
@@ -38,7 +39,7 @@ int _printf(const char *format, ...)
 					contador++;
 					break;
 				default:
-					return (0);
+					return (1);
 					break;
 			}
 		}
