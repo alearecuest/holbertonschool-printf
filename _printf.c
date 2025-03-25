@@ -10,7 +10,9 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (format && format[i])
+	if (format == NULL)
+		return (0);
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -39,7 +41,7 @@ int _printf(const char *format, ...)
 					contador++;
 					break;
 				default:
-					return (1);
+					return (0);
 					break;
 			}
 		}
