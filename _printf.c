@@ -9,9 +9,9 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list args;
 
-	va_start(args, format);
 	if (format == NULL)
 		return (0);
+	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -41,7 +41,9 @@ int _printf(const char *format, ...)
 					contador++;
 					break;
 				default:
-					return (0);
+					_putchar('%');
+					_putchar(format[i]);
+					contador += 2;
 					break;
 			}
 		}
