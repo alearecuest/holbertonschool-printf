@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 					contador++;
 					break;
 				default:
+					return (0);
 					break;
 			}
 		}
