@@ -13,6 +13,7 @@ int (*get_op_func(char s))(va_list args)
 	espec_t ops[] = {
 		{'c', _char},
 		{'s', _str},
+		{'%', porcentaje},
 		{'\0', NULL}
 	};
 	i = 0;

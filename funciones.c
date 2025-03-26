@@ -33,3 +33,14 @@ int _str(va_list args)
 	}
 	return (contador);
 }
+/**
+ * porcentaje - maneja los %% e imprime %
+ * @args: caracter a imprimir
+ *
+ * Return: cantidad de caracteres impresos
+ */
+int porcentaje(va_list args)
+{
+	(void)args;
+	return (_putchar('%'));
+}
