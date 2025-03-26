@@ -21,15 +21,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
+			if (!format[i + 1])
+				return (-1);
 			i++;
 			func = get_op_func(format[i]);
-
+			if (func == NULL)
+				contador += _putchar(format[i]);
 			if (func)
 				contador += func(args);
-			else
-			{
-				return (-1);
-			}
 		}
 		else
 		{
