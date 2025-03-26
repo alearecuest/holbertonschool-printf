@@ -14,19 +14,20 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*func)(va_list);
 
-	if (!format)
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			if (!format[i + 1])
-				return (-1);
 			i++;
 			func = get_op_func(format[i]);
 			if (func == NULL)
-				contador += _putchar(format[i]);
+			{
+				va_end(args);
+				return (-1);
+			}
 			if (func)
 				contador += func(args);
 		}
