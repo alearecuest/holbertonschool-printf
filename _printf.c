@@ -4,53 +4,31 @@
 
 int _printf(const char *format, ...)
 {
-	int contador = 0, i = 0, j;
-	char c;
-	char *str;
+	int contador = 0, i = 0;
 	va_list args;
+	int (*func)(va_list);
 
-	if (format == NULL)
-		return (0);
+	if (!format)
+		return (-1);
 	va_start(args, format);
-	while (format[i])
+	while(format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			switch (format[i])
+			func = get_op_func(format[i]);
+
+			if (func)
+				contador += func(args);
+			else
 			{
-				case 'c':
-					c = va_arg(args, int);
-					_putchar(c);
-					contador++;
-					break;
-				case 's':
-					str = va_arg(args, char *);
-					j = 0;
-					if (!str)
-						str = "(null)";
-					while (str[j])
-					{
-						_putchar(str[j]);
-						contador++;
-						j++;
-					}
-					break;
-				case '%':
-					_putchar('%');
-					contador++;
-					break;
-				default:
-					_putchar('%');
-					_putchar(format[i]);
-					contador += 2;
-					break;
+				contador += _putchar('%');
+				contador += _putchar(format[i]);
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			contador++;
+			contador += _putchar(format[i]);
 		}
 		i++;
 	}
