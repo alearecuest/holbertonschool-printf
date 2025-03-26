@@ -19,7 +19,10 @@ int main(void)
     _printf(NULL);
     _printf("%");
     _printf("%k\n");
+    printf("%k\n");
     _printf("%!\n");
+    printf("%!\n");
+    printf("--------fin--de--pruebas---------------------\n\n");
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;

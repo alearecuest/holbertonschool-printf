@@ -25,8 +25,8 @@ int _printf(const char *format, ...)
 			func = get_op_func(format[i]);
 			if (func == NULL)
 			{
-				va_end(args);
-				return (-1);
+				contador += _putchar('%');
+				contador += _putchar(format[i]);
 			}
 			if (func)
 				contador += func(args);
