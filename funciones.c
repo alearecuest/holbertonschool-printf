@@ -1,12 +1,22 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-
+/**
+ * _char - imprime caracteres
+ * @args: caracter a imprimir
+ *
+ * Return: retorna cantidad de caracteres impresos
+ */
 int _char(va_list args)
 {
-	return (_putchar(va_arg(args,int)));
+	return (_putchar(va_arg(args, int)));
 }
-
+/**
+ * _str - imprime una cadena de texto
+ * @args: cadena a imprimir
+ *
+ * Return: cantidad de caracteres impresos
+ */
 int _str(va_list args)
 {
 	int contador = 0, i = 0;

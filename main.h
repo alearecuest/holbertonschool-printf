@@ -2,6 +2,11 @@
 #define MAIN_H
 
 #include <stdarg.h>
+/**
+ * struct especificador - Struct especificador
+ * @op: el espesificador
+ * @f: la funcion asociada
+ */
 
 typedef struct especificador
 {
