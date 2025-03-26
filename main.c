@@ -22,6 +22,15 @@ int main(void)
     printf("%k\n");
     _printf("%!\n");
     printf("%!\n");
+    _printf("\n");
+    _printf("%d\n", INT_MIN);
+    printf("%d\n", INT_MIN);
+    _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    _printf("%i\n", INT_MIN);
+    printf("%i\n", INT_MIN);
+    _printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
     printf("--------fin--de--pruebas---------------------\n\n");
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");

@@ -53,17 +53,19 @@ int porcentaje(va_list args)
 int _int(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, contador = 0, i = 0;
+	int contador = 0, i = 0;
+	unsigned int num;
 	char buffer[20];
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
 		contador++;
+		num = (unsigned int)(-n);
 	}
+	else
+		num = n;
 
-	num = n;
 	if (num == 0)
 	{
 		_putchar('0');
