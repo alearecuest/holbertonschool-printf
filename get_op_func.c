@@ -14,6 +14,8 @@ int (*get_op_func(char s))(va_list args)
 		{'c', _char},
 		{'s', _str},
 		{'%', porcentaje},
+		{'d', _int},
+		{'i', _int},
 		{'\0', NULL}
 	};
 	i = 0;

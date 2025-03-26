@@ -44,3 +44,40 @@ int porcentaje(va_list args)
 	(void)args;
 	return (_putchar('%'));
 }
+/**
+ * _int - imprime un entero positivo o negativo
+ * @args: numero entero
+ *
+ * Return: cantidad de caracteres impresos
+ */
+int _int(va_list args)
+{
+	int n = va_arg(args, int);
+	int num, contador = 0, i = 0;
+	char buffer[20];
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+		contador++;
+	}
+
+	num = n;
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (num > 0)
+	{
+		buffer[i++] = (num % 10) + '0';
+		num /= 10;
+	}
+	while (i > 0)
+	{
+		_putchar(buffer[--i]);
+		contador++;
+	}
+	return (contador);
+}
