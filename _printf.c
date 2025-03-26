@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 				contador += func(args);
 			else
 			{
-				contador += _putchar('%');
 				contador += _putchar(format[i]);
 			}
 		}
