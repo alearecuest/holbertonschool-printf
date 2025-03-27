@@ -30,10 +30,29 @@
 |- _printf.c              <-- Main function for the task
 ```
 
-- `funciones.c` Auxiliary file where all the functions used in the _printf.c function are stored.
-- `putchar.c` External function that writes a character and is called in all the functions of the funciones.c file.
-- `get_op_func.c` Array that associates each of the specifiers with the requested function.
-- `main.c` File where the tests are executed to verify that our _printf.c function meets the specified requirements.
-- `main.h` It is the header file, which contains all the prototypes and structures that we implement in our _printf.c function.
-- `_printf.c` It is the main function, created by us, that integrates all the necessary mechanisms to print the provided input.
-- `README.md` Provides the information and the manual of the functions and files used for the resolution of the tasks.
+- **_`funciones.c`_** Auxiliary file where all the functions used in the _printf.c function are stored.
+- **_`putchar.c`_** External function that writes a character and is called in all the functions of the funciones.c file.
+- **_`get_op_func.c`_** Array that associates each of the specifiers with the requested function.
+- **_`main.c`_** File where the tests are executed to verify that our _printf.c function meets the specified requirements.
+- **_`main.h`_** It is the header file, which contains all the prototypes and structures that we implement in our _printf.c function.
+- **_`_printf.c`_** It is the main function, created by us, that integrates all the necessary mechanisms to print the provided input.
+- **_`README.md`_** Provides the information and the manual of the functions and files used for the resolution of the tasks.
+
+
+## Description
+
+*Our program receives a text string with certain specifiers, if necessary, and then prints it. If there are no specifiers, it only prints the entered text. If there are specifiers, it will obtain the value of the indicated variable and then print it. Once all the content is printed, it returns the number of characters used.*
+
+
+*Let's consider the following example: 
+
+```text
+name = Juan;
+
+_printf("Hola %s\n", name);
+
+```
+This will print the following: `Hola Juan`
+
+And the return is: `9`
+
