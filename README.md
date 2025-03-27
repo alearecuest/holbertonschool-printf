@@ -1,58 +1,108 @@
 # Proyect PRINTF
 
-## First Task
+### NAME
+_printf - produce output according to a format
 
-### Handle Conversion Specifiers
-
-#### Description of Task
-
-##### For this task, you need to implement a custom function _printf that mimics the behavior of the printf function from the C standard library. Based on the prototype: int _printf(const char *format, ...); the created function should return the number of characters printed, excluding the null byte used to end strings. The output should be written to stdout, the standard output stream. The format string can contain zero or more directives. You need to handle the following conversion specifiers: %c, %s, and %%. For this task, you do not need to reproduce the buffer handling of the printf function from the C standard library, nor the flag characters, field width, precision, or length modifiers.
-
-
-## Second Task
-
-### Implement the _printf function to handle integer specifiers
-
-#### Description of Task
-
-##### In this project, you are required to handle conversion specifiers in C. The conversion specifiers you need to work with in this task are d and i. Both are used to print integer values in decimal format. You will need to implement the logic to handle these specifiers when they appear in a format string. For this initial task, you do not need to worry about flag characters, field width, precision, or length modifiers. You will only focus on the basic conversion of integers.
-
-## Repository Structure
-##### The repository is structured as follows
+### SYNOPSIS
 
 ```text
-|- README.md              <-- Task description and man
-|- funciones.c            <-- Contains the functions
-|- _putchar.c             <-- Function created for write a character
-|- get_op_func.c          <-- Contains the array with the option and the associated function
-|- main.c                 <-- Local testing
-|- main.h                <-- Contains all the prototypes and structures
-|- _printf.c              <-- Main function for the task
+#include "main.h"
+
+int _printf(const char *format, ...);
 ```
+### DESCRIPTION
 
-- **_`funciones.c`_** Auxiliary file where all the functions used in the _printf.c function are stored.
-- **_`putchar.c`_** External function that writes a character and is called in all the functions of the funciones.c file.
-- **_`get_op_func.c`_** Array that associates each of the specifiers with the requested function.
-- **_`main.c`_** File where the tests are executed to verify that our _printf.c function meets the specified requirements.
-- **_`main.h`_** It is the header file, which contains all the prototypes and structures that we implement in our _printf.c function.
-- **_`_printf.c`_** It is the main function, created by us, that integrates all the necessary mechanisms to print the provided input.
-- **_`README.md`_** Provides the information and the manual of the functions and files used for the resolution of the tasks.
+The _printf function produces output according to a format as described below. The format string is composed of zero or more directives. The function writes the output to stdout, the standard output stream.
 
+#### **Conversion specifiers**
 
-## Description
-
-*Our program receives a text string with certain specifiers, if necessary, and then prints it. If there are no specifiers, it only prints the entered text. If there are specifiers, it will obtain the value of the indicated variable and then print it. Once all the content is printed, it returns the number of characters used.*
+The following conversion specifiers are supported:
 
 
-*Let's consider the following example: 
+- %c: Print a single character.
+- %s: Print a string of characters.
+- %%: Print a percent sign.
+- %d: Print a decimal (base 10) number.
+- %i: Print an integer in base 10.
+
+
+### RETURN VALUE
+
+The _printf functions returns the number of characters printed (excluding the NULL byte used to end output to strings).
+
+### EXAMPLE
 
 ```text
-name = Juan;
+#include "main.h"
 
-_printf("Hola %s\n", name);
-
+int main(void)
+{
+    _printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    _printf("Percent:[%%]\n");
+    _printf("Decimal:[%d]\n", 123);
+    _printf("Integer:[%i]\n", 456);
+    return (0);
+}
 ```
-This will print the following: `Hola Juan`
 
-And the return is: `9`
+### SEE ALSO
+
+
+### AUTHOR
+
+_Written by Marrero, Martín & Arévalo, Alejandro_
+
+==================================================================================
+
+
+### NAME
+
+_printf - handle additional conversion specifiers
+
+### SYNOPSIS
+
+```text
+#include "main.h"
+
+int _printf(const char *format, ...);
+```
+
+### DESCRIPTION
+
+The _printf function has been extended to handle additional conversion specifiers for decimal and integer values.
+
+
+### **Conversion specifiers**
+
+The following conversion specifiers are supported:
+
+- %d: Print a decimal (base 10) number.
+- %i: Print an integer in base 10.
+
+
+### RETURN VALUE
+
+The _printf function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+### EXAMPLES
+
+```text
+#include "main.h"
+
+int main(void)
+{
+    _printf("Decimal:[%d]\n", 123);
+    _printf("Integer:[%i]\n", 456);
+    return (0);
+}
+```
+
+### SEE ALSO
+
+
+### AUTOR
+
+_Written by Marrero, Martín & Arévalo, Alejandro_
+
 
