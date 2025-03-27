@@ -1,7 +1,7 @@
 # Proyect PRINTF
 
 ### NAME
-_printf - produce output according to a format
+**_printf** - produce output according to a format
 
 ### SYNOPSIS
 
@@ -14,10 +14,13 @@ int _printf(const char *format, ...);
 
 The _printf function produces output according to a format as described below. The format string is composed of zero or more directives. The function writes the output to stdout, the standard output stream.
 
-#### **Conversion specifiers**
+#### Format of the format string
+
+The format string is a sequence of characters that starts and ends in its initial shift state, if applicable. This string can include one or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which fetches zero or more subsequent arguments. Each conversion specification begins with the character % and ends with a conversion specifier.
+
+### **Conversion specifiers**
 
 The following conversion specifiers are supported:
-
 
 - %c: Print a single character.
 - %s: Print a string of characters.
@@ -25,10 +28,76 @@ The following conversion specifiers are supported:
 - %d: Print a decimal (base 10) number.
 - %i: Print an integer in base 10.
 
+### Functions
+
+#### _printf.c
+
+```text
+int _printf(const char *format, ...);
+```
+
+- **Description**: Produces output according to a format.
+- **Parameters**: format -> A character string composed of zero or more directives.
+- **Return Value**: The number of characters printed (excluding the null byte).
+
+
+#### _putchar.c
+
+```text
+int _putchar(char c);
+```
+
+- **Description**: Writes a character to stdout.
+- **Parameters**: c -> The character to be written.
+- **Return Value**: On success, returns the character written. On error, returns -1.
+
+#### funciones.c
+
+```text
+int _char(va_list args); 
+```
+
+- **Description**: Print a character.
+- **Parameters**: args -> List of arguments containing the character to be printed.
+- **Return Value**: The number of characters printed.
+
+```text
+int _str(va_list args); 
+```
+
+- **Description**: Prints a string of text.
+- **Parameters**: args -> List of arguments containing the string to be printed.
+- **Return Value**: The number of characters printed.
+
+```text
+int porcentaje(va_list args); 
+```
+
+- **Description**: Handles %% prints %.
+- **Parameters**: args -> List of arguments.
+- **Return Value**: The number of characters printed.
+
+```text
+int _int(va_list args); 
+```
+
+- **Description**: Prints a postive o negative integer.
+- **Parameters**: args -> List of arguments containing the integer to be printed.
+- **Return Value**: The number of characters printed.
+
+#### get_op_func.c
+
+```text
+int (*get_op_func(char s))(va_list args);
+```
+- **Description**: Receives a character and returns the associated function.
+- **Parameters**: s -> Character.
+- **Return Value**: The function associated with the character, or NULL if no match is found.
+
 
 ### RETURN VALUE
 
-The _printf functions returns the number of characters printed (excluding the NULL byte used to end output to strings).
+The **_printf** functions returns the number of characters printed (excluding the NULL byte used to end output to strings).
 
 ### EXAMPLE
 
@@ -45,64 +114,37 @@ int main(void)
     return (0);
 }
 ```
+### ERROR HANDLING
 
-### SEE ALSO
+The **_printf** function handles errors gracefully. If an invalid format specifier is encountered, the function will return -1 and print an error message to stderr.
 
+
+### LIMITATIONS
+The current implementation of **_printf** does not support the following:
+
+- Flag characters
+- Field width
+- Precision
+- Length modifiers
+
+### TESTING
+To test the **_printf** function, compile your code using the following command:
+
+```text
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```
+
+Run the executable to see the output:
+
+```text
+$ ./printf
+```
+
+
+
+==================================================================================
 
 ### AUTHOR
 
 _Written by Marrero, Martín & Arévalo, Alejandro_
-
-==================================================================================
-
-
-### NAME
-
-_printf - handle additional conversion specifiers
-
-### SYNOPSIS
-
-```text
-#include "main.h"
-
-int _printf(const char *format, ...);
-```
-
-### DESCRIPTION
-
-The _printf function has been extended to handle additional conversion specifiers for decimal and integer values.
-
-
-### **Conversion specifiers**
-
-The following conversion specifiers are supported:
-
-- %d: Print a decimal (base 10) number.
-- %i: Print an integer in base 10.
-
-
-### RETURN VALUE
-
-The _printf function returns the number of characters printed (excluding the null byte used to end output to strings).
-
-### EXAMPLES
-
-```text
-#include "main.h"
-
-int main(void)
-{
-    _printf("Decimal:[%d]\n", 123);
-    _printf("Integer:[%i]\n", 456);
-    return (0);
-}
-```
-
-### SEE ALSO
-
-
-### AUTOR
-
-_Written by Marrero, Martín & Arévalo, Alejandro_
-
 
