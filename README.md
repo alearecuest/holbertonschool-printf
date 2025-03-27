@@ -16,3 +16,24 @@
 #### Description of Task
 
 ##### In this project, you are required to handle conversion specifiers in C. The conversion specifiers you need to work with in this task are d and i. Both are used to print integer values in decimal format. You will need to implement the logic to handle these specifiers when they appear in a format string. For this initial task, you do not need to worry about flag characters, field width, precision, or length modifiers. You will only focus on the basic conversion of integers.
+
+## Repository Structure
+##### The repository is structured as follows
+
+```text
+|- README.md              <-- Task description and man
+|- funciones.c            <-- Contains the functions
+|- _putchar.c             <-- Function created for write a character
+|- get_op_func.c          <-- Contains the array with the option and the associated function
+|- main.c                 <-- Local testing
+|- main.h                <-- Contains all the prototypes and structures
+|- _printf.c              <-- Main function for the task
+```
+
+- `funciones.c` Auxiliary file where all the functions used in the _printf.c function are stored.
+- `putchar.c` External function that writes a character and is called in all the functions of the funciones.c file.
+- `get_op_func.c` Array that associates each of the specifiers with the requested function.
+- `main.c` File where the tests are executed to verify that our _printf.c function meets the specified requirements.
+- `main.h` It is the header file, which contains all the prototypes and structures that we implement in our _printf.c function.
+- `_printf.c` It is the main function, created by us, that integrates all the necessary mechanisms to print the provided input.
+- `README.md` Provides the information and the manual of the functions and files used for the resolution of the tasks.
