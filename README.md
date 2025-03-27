@@ -12,7 +12,7 @@ int _printf(const char *format, ...);
 ```
 ### DESCRIPTION
 
-The _printf function produces output according to a format as described below. The format string is composed of zero or more directives. The function writes the output to stdout, the standard output stream.
+The **_printf** function produces output according to a format as described below. The format string is composed of zero or more directives. The function writes the output to stdout, the standard output stream.
 
 #### Format of the format string
 
@@ -140,11 +140,11 @@ Run the executable to see the output:
 $ ./printf
 ```
 
-
-
 ==================================================================================
 
 ### AUTHOR
 
 _Written by Marrero, Martín & Arévalo, Alejandro_
+
+
 
