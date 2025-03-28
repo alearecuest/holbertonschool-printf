@@ -5,7 +5,6 @@
 **_printf** - produce output according to a format
 
 
-
 ### SYNOPSIS
 
 ```text
@@ -35,7 +34,7 @@ The following conversion specifiers are supported:
 
 ### Functions
 
-#### _printf.c
+#### __printf.c_
 
 ```text
 int _printf(const char *format, ...);
@@ -45,7 +44,7 @@ int _printf(const char *format, ...);
 - **Parameters**: format -> A character string composed of zero or more directives.
 - **Return Value**: The number of characters printed (excluding the null byte).
 
-#### _putchar.c
+#### __putchar.c_
 
 ```text
 int _putchar(char c);
@@ -55,7 +54,7 @@ int _putchar(char c);
 - **Parameters**: c -> The character to be written.
 - **Return Value**: On success, returns the character written. On error, returns -1.
 
-#### funciones.c
+#### _funciones.c_
 
 ```text
 int _char(va_list args); 
@@ -89,7 +88,7 @@ int _int(va_list args);
 - **Parameters**: args -> List of arguments containing the integer to be printed.
 - **Return Value**: The number of characters printed.
 
-#### get_op_func.c
+#### _get_op_func.c_
 
 ```text
 int (*get_op_func(char s))(va_list args);
@@ -99,7 +98,7 @@ int (*get_op_func(char s))(va_list args);
 - **Parameters**: s -> Character.
 - **Return Value**: The function associated with the character, or NULL if no match is found.
 
-#### main.h
+#### _main.h_
 
 ```text
 typedef struct especificador
@@ -107,14 +106,14 @@ typedef struct especificador
 
 - **Description**: Defines a structure that associates a format specifier with the corresponding function that handles that format.It is used alongside the get_op_func function to dynamically select the appropriate function according to the specifier found in the format string.
 - **Parameters**: 
-    - op -> The character representing the format specifier. 
-    - f -> A pointer to the function that prints the argument corresponding to the specifier.
+    - **_op_** -> The character representing the format specifier. 
+    - **_f_** -> A pointer to the function that prints the argument corresponding to the specifier.
 - **Return Value**: Not applicable; this structure is only a data type definition.
 
 
 ### RETURN VALUE
 
-The **_printf** functions returns the number of characters printed (excluding the NULL byte used to end output to strings).
+The **_```_printf```_** functions returns the number of characters printed (excluding the **_```NULL```_** byte used to end output to strings). If the **_```format```_** argument is **_```NULL```_** or if an invalid specifier is provided, the function returns **_```-1```_**.
 
 
 ### EXAMPLE
@@ -167,9 +166,5 @@ $ ./printf
 _Written by Marrero, Martín & Arévalo, Alejandro_
 
 ==================================================================================
-### AUTHOR
-
-_Written by Marrero, Martín & Arévalo, Alejandro_
-
 
 
