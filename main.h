@@ -4,7 +4,7 @@
 #include <stdarg.h>
 /**
  * struct especificador - Struct especificador
- * @op: el espesificador
+ * @op: el especificador
  * @f: la funcion asociada
  */
 
