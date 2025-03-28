@@ -1,7 +1,10 @@
 # Proyect PRINTF
 
+
 ### NAME
 **_printf** - produce output according to a format
+
+
 
 ### SYNOPSIS
 
@@ -10,6 +13,8 @@
 
 int _printf(const char *format, ...);
 ```
+
+
 ### DESCRIPTION
 
 The **_printf** function produces output according to a format as described below. The format string is composed of zero or more directives. The function writes the output to stdout, the standard output stream.
@@ -22,11 +27,11 @@ The format string is a sequence of characters that starts and ends in its initia
 
 The following conversion specifiers are supported:
 
-- %c: Print a single character.
-- %s: Print a string of characters.
-- %%: Print a percent sign.
-- %d: Print a decimal (base 10) number.
-- %i: Print an integer in base 10.
+- **%c**: Prints a single character using the internal function _**_char()_**.
+- **%s**: Prints a string of characters using the internal function _**_str()_**.
+- **%%**: Prints a literal percentage '%' using the internal function **_porcentaje_**.
+- **%d**: Prints a decimal (base 10) number, using the internal function **__int()_**.
+- **%i**: Prints an integer in base 10, using the internal function **__int()_**.
 
 ### Functions
 
@@ -39,7 +44,6 @@ int _printf(const char *format, ...);
 - **Description**: Produces output according to a format.
 - **Parameters**: format -> A character string composed of zero or more directives.
 - **Return Value**: The number of characters printed (excluding the null byte).
-
 
 #### _putchar.c
 
@@ -90,14 +94,28 @@ int _int(va_list args);
 ```text
 int (*get_op_func(char s))(va_list args);
 ```
+
 - **Description**: Receives a character and returns the associated function.
 - **Parameters**: s -> Character.
 - **Return Value**: The function associated with the character, or NULL if no match is found.
+
+#### main.h
+
+```text
+typedef struct especificador
+```
+
+- **Description**: Defines a structure that associates a format specifier with the corresponding function that handles that format.It is used alongside the get_op_func function to dynamically select the appropriate function according to the specifier found in the format string.
+- **Parameters**: 
+    - op -> The character representing the format specifier. 
+    - f -> A pointer to the function that prints the argument corresponding to the specifier.
+- **Return Value**: Not applicable; this structure is only a data type definition.
 
 
 ### RETURN VALUE
 
 The **_printf** functions returns the number of characters printed (excluding the NULL byte used to end output to strings).
+
 
 ### EXAMPLE
 
@@ -114,6 +132,8 @@ int main(void)
     return (0);
 }
 ```
+
+
 ### ERROR HANDLING
 
 The **_printf** function handles errors gracefully. If an invalid format specifier is encountered, the function will return -1 and print an error message to stderr.
@@ -142,6 +162,11 @@ $ ./printf
 
 ==================================================================================
 
+### AUTHOR
+
+_Written by Marrero, Martín & Arévalo, Alejandro_
+
+==================================================================================
 ### AUTHOR
 
 _Written by Marrero, Martín & Arévalo, Alejandro_
