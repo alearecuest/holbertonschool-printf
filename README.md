@@ -1,4 +1,4 @@
-# Proyect PRINTF
+# Proyect *PRINTF*
 
 
 ### NAME
@@ -131,11 +131,40 @@ int main(void)
     return (0);
 }
 ```
+#### Format:
+```
+_printf("Hello, World!\n");
+```
+
+#### Out:
+```
+Hello, World!
+```
+
+#### Format:
+```
+_printf("The number is: %d\n", 30);
+```
+
+#### Out:
+```
+The number is: 30
+```
+
+#### Format:
+```
+_printf("Charater: %c\n", 'A');
+```
+
+### Out:
+```
+Character: A
+```
 
 
 ### ERROR HANDLING
 
-The **_printf** function handles errors gracefully. If an invalid format specifier is encountered, the function will return -1 and print an error message to stderr.
+The **_printf** function handles errors gracefully. If an invalid format specifier is encountered, the function will return **```-1```** and print an error message to **```stderr```**.
 
 
 ### LIMITATIONS
@@ -145,6 +174,8 @@ The current implementation of **_printf** does not support the following:
 - Field width
 - Precision
 - Length modifiers
+
+The **_printf** function is a limited implementation of the standard printf function from the **C** standard library. It does not support advanced specifiers such as **```%f```**, **```%x```**, **```%u```**, **```%p```**, among others
 
 ### TESTING
 To test the **_printf** function, compile your code using the following command:
