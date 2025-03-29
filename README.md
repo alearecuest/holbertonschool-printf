@@ -2,7 +2,7 @@
 
 
 ### NAME
-**_printf** - produce output according to a format
+**__printf_** - produce output according to a format
 
 
 ### SYNOPSIS
@@ -40,9 +40,9 @@ The following conversion specifiers are supported:
 int _printf(const char *format, ...);
 ```
 
-- **Description**: Produces output according to a format.
-- **Parameters**: format -> A character string composed of zero or more directives.
-- **Return Value**: The number of characters printed (excluding the null byte).
+- **_Description_**: Produces output according to a format.
+- **_Parameters_**: format -> A character string composed of zero or more directives.
+- **_Return Value_**: The number of characters printed (excluding the null byte).
 
 #### __putchar.c_
 
@@ -50,9 +50,9 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 ```
 
-- **Description**: Writes a character to stdout.
-- **Parameters**: c -> The character to be written.
-- **Return Value**: On success, returns the character written. On error, returns -1.
+- **_Description_**: Writes a character to stdout.
+- **_Parameters_**: c -> The character to be written.
+- **_Return Value_**: On success, returns the character written. On error, returns -1.
 
 #### _funciones.c_
 
@@ -60,33 +60,33 @@ int _putchar(char c);
 int _char(va_list args); 
 ```
 
-- **Description**: Print a character.
-- **Parameters**: args -> List of arguments containing the character to be printed.
-- **Return Value**: The number of characters printed.
+- **_Description_**: Print a character.
+- **_Parameters_**: args -> List of arguments containing the character to be printed.
+- **_Return Value_**: The number of characters printed.
 
 ```text
 int _str(va_list args); 
 ```
 
-- **Description**: Prints a string of text.
-- **Parameters**: args -> List of arguments containing the string to be printed.
-- **Return Value**: The number of characters printed.
+- **_Description_**: Prints a string of text.
+- **_Parameters_**: args -> List of arguments containing the string to be printed.
+- **_Return Value_**: The number of characters printed.
 
 ```text
 int porcentaje(va_list args); 
 ```
 
-- **Description**: Handles %% prints %.
-- **Parameters**: args -> List of arguments.
-- **Return Value**: The number of characters printed.
+- **_Description_**: Handles %% prints %.
+- **_Parameters_**: args -> List of arguments.
+- **_Return Value_**: The number of characters printed.
 
 ```text
 int _int(va_list args); 
 ```
 
-- **Description**: Prints a postive o negative integer.
-- **Parameters**: args -> List of arguments containing the integer to be printed.
-- **Return Value**: The number of characters printed.
+- **_Description_**: Prints a postive o negative integer.
+- **_Parameters_**: args -> List of arguments containing the integer to be printed.
+- **_Return Value_**: The number of characters printed.
 
 #### _get_op_func.c_
 
@@ -94,9 +94,9 @@ int _int(va_list args);
 int (*get_op_func(char s))(va_list args);
 ```
 
-- **Description**: Receives a character and returns the associated function.
-- **Parameters**: s -> Character.
-- **Return Value**: The function associated with the character, or NULL if no match is found.
+- **_Description_**: Receives a character and returns the associated function.
+- **_Parameters_**: s -> Character.
+- **_Return Value_**: The function associated with the character, or NULL if no match is found.
 
 #### _main.h_
 
@@ -104,16 +104,16 @@ int (*get_op_func(char s))(va_list args);
 typedef struct especificador
 ```
 
-- **Description**: Defines a structure that associates a format specifier with the corresponding function that handles that format.It is used alongside the get_op_func function to dynamically select the appropriate function according to the specifier found in the format string.
-- **Parameters**: 
+- **_Description_**: Defines a structure that associates a format specifier with the corresponding function that handles that format.It is used alongside the get_op_func function to dynamically select the appropriate function according to the specifier found in the format string.
+- **_Parameters_**: 
     - **_op_** -> The character representing the format specifier. 
     - **_f_** -> A pointer to the function that prints the argument corresponding to the specifier.
-- **Return Value**: Not applicable; this structure is only a data type definition.
+- **_Return Value_**: Not applicable; this structure is only a data type definition.
 
 
 ### RETURN VALUE
 
-The **_```_printf```_** functions returns the number of characters printed (excluding the **_```NULL```_** byte used to end output to strings). If the **_```format```_** argument is **_```NULL```_** or if an invalid specifier is provided, the function returns **_```-1```_**.
+The **_`_printf`_** functions returns the number of characters printed (excluding the **_`NULL`_** byte used to end output to strings). If the **_`format`_** argument is **_`NULL`_** or if an invalid specifier is provided, the function returns **_`-1`_**.
 
 
 ### EXAMPLE
@@ -131,54 +131,45 @@ int main(void)
     return (0);
 }
 ```
-#### Format:
-```
-_printf("Hello, World!\n");
-```
 
-#### Out:
-```
-Hello, World!
-```
 
-#### Format:
-```
-_printf("The number is: %d\n", 30);
-```
+### MORE EXAMPLES
 
-#### Out:
-```
-The number is: 30
-```
-
-#### Format:
-```
-_printf("Charater: %c\n", 'A');
-```
-
-### Out:
-```
-Character: A
-```
+| **_CASE_** | **_OUTPUT_** |
+| ------------- |:-------------:|
+| `_printf("Hello, %s!\n", "World");` | **Hello, World!** |
+| `_printf("The number is: %d\n", 30);` | **The number is: 30** |
+| `_printf("Charater: %c\n", 'A');` | **Character: A** |
+| `_printf("Integer: %dn", 123);` | **123** |
+| `_printf("Percent sign: %%\n");` | **%** |
+| `_printf("Hello, %s! Character: %c, Integer: %d, Percent sign: %%\n", "World", 'A', 123);` | **Hello, World! Character: A, Integer: 123, Percent sign: %** |
+| `_printf("Result: %d\n", result);` | **-1** |
+| `_printf("Negative integer: %d\n", -456);` | **-456** |
+| `_printf("Null string: %s\n", NULL);` | **NULL** |
+| `_printf("String: %s, Character: %c, Integer: %d, Percent: %%\n", "test", 'B', 789);` | **String: test, Character: B, Integer: 789, Percent: %** |
+| `_printf("Large number: %d\n", 123456789);` | **123456789** |
+| `_printf("Positive decimal: %f\n", 234.456);` | **234.456000** |
+| `_printf("Negative decimal: %f\n", -234.456);` | **-234.456000** |
 
 
 ### ERROR HANDLING
 
-The **_printf** function handles errors gracefully. If an invalid format specifier is encountered, the function will return **```-1```** and print an error message to **```stderr```**.
+The **_`_printf`_** function handles errors gracefully. If an invalid format specifier is encountered, the function will return **`-1`** and print an error message to **`stderr`**.
 
 
 ### LIMITATIONS
-The current implementation of **_printf** does not support the following:
+The current implementation of **_`_printf`_** does not support the following:
 
 - Flag characters
 - Field width
 - Precision
 - Length modifiers
 
-The **_printf** function is a limited implementation of the standard printf function from the **C** standard library. It does not support advanced specifiers such as **```%f```**, **```%x```**, **```%u```**, **```%p```**, among others
+The **_`_printf`_** function is a limited implementation of the standard printf function from the **C** standard library. It does not support advanced specifiers such as **`%f`**, **`%x`**, **`%u`**, **`%p`**, among others
+
 
 ### TESTING
-To test the **_printf** function, compile your code using the following command:
+To test the **_`_printf`_** function, compile your code using the following command:
 
 ```text
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
@@ -187,8 +178,9 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 Run the executable to see the output:
 
 ```text
-$ ./printf
+$ ./_printf
 ```
+
 
 ==================================================================================
 
@@ -197,5 +189,3 @@ $ ./printf
 _Written by Marrero, Martín & Arévalo, Alejandro_
 
 ==================================================================================
-
-
